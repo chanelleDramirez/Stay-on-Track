@@ -1,9 +1,7 @@
 package com.StayonTrack.StayonTrack.models;
 
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
 
 
 @Entity
@@ -25,6 +23,14 @@ public class Users {
     }
 
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+
+
+    @Column(nullable = false, length = 100)
+    private String title;
+
+    @Column(nullable = false)
+    private String description;
     public Long getId() {
         return id;
     }
