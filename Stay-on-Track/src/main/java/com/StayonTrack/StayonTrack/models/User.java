@@ -5,32 +5,37 @@ import jakarta.persistence.*;
 
 
 @Entity
-@Table (name="users")
-public class Users {
-
+@Table(name="users")
+public class User {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    public String email;
-    public String username;
-    public String password;
+    @Column
+    private String email;
+    @Column
+    private String username;
+    @Column
+    private String password;
 
     public void setId(Long id) {
         this.id = id;
     }
 
-    public void User(){
+    public  User(){
 
     }
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    public User(User copy){
+        id = copy.id;
+        email = copy.email;
+        username = copy.username;
+        password = copy.password;
+
+    }
 
 
-    @Column(nullable = false, length = 100)
-    private String title;
 
-    @Column(nullable = false)
-    private String description;
     public Long getId() {
         return id;
     }

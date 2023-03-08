@@ -2,6 +2,7 @@ package com.StayonTrack.StayonTrack.controllers;
 
 
 import com.StayonTrack.StayonTrack.Repository.UserRepository;
+import com.StayonTrack.StayonTrack.models.User;
 import org.springframework.boot.autoconfigure.security.SecurityProperties;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Controller;
@@ -27,7 +28,7 @@ public class UsersController {
     }
 
     @PostMapping("/sign-up")
-    public String saveUser(@ModelAttribute SecurityProperties.User user){
+    public String saveUser(@ModelAttribute User user){
         String hash = passwordEncoder.encode(user.getPassword());
         user.setPassword(hash);
         userDao.save(user);

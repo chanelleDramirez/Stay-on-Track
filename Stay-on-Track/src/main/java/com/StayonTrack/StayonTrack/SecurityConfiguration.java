@@ -19,7 +19,6 @@ public class SecurityConfiguration {
     private UserDetailsLoader usersLoader;
 
     public SecurityConfiguration(UserDetailsLoader usersLoader) {
-
         this.usersLoader = usersLoader;
     }
 
