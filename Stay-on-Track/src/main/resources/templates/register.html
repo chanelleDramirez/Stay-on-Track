@@ -1,22 +1,22 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
-<head th: replace="Stay on Track">
+<head>
     <meta charset="UTF-8" />
     <title>Register</title>
 </head>
-<body class="main-container main-bg">
+<body>
 <h1>Create an account</h1>
-<form th:action="@{/register}" method="POST" th:object="${user}">
-    <label for="username">Username</label>
-    <input id="username" th:field="*{username}" />
+<!--<form th:action="@{/register}" method="POST" th:object="${user}">-->
+<!--    <label for="username">Username</label>-->
+<!--    <input id="username" th:field="*{username}" />-->
 
-    <label for="email">Email</label>
-    <input id="email" th:field="*{email}" />
+<!--    <label for="email">Email</label>-->
+<!--    <input id="email" th:field="*{email}" />-->
 
-    <label for="password">Password</label>
-    <input id="password" type="password" th:field="*{password}" />
+<!--    <label for="password">Password</label>-->
+<!--    <input id="password" type="password" th:field="*{password}" />-->
 
-    <input value="Sign me up!" type="submit" />
-</form>
+<!--    <input value="Sign me up!" type="submit" />-->
+<!--</form>-->
 </body>
 </html>
