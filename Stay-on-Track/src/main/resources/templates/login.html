@@ -5,7 +5,7 @@
   <title>Log In</title>
 </head>
 <body>
-<h1>Log In</h1>
+<h1>Log In, <span th:text="${login}">Welcome</span></h1>
 <div th:if="${param.error}">
   Invalid Username and Password.
 </div>
