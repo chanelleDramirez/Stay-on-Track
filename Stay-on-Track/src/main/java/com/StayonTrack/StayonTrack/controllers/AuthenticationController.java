@@ -1,24 +1,32 @@
 package com.StayonTrack.StayonTrack.controllers;
 
 
+import com.StayonTrack.StayonTrack.models.User;
+import org.springframework.boot.autoconfigure.neo4j.Neo4jProperties;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.*;
 
 
 @Controller
 public class AuthenticationController {
     @GetMapping("/login")
-    public String showLoginForm(){
+    public String showLoginForm() {
         return "login";
 
     }
 
 
+
     }
+
+//    @PostMapping("logout")
+//    public String exitProfile(){
+//        return "redirect:/login";
+//    }
+
+
 
 
 

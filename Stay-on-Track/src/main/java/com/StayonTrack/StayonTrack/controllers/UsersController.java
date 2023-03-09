@@ -3,6 +3,7 @@ package com.StayonTrack.StayonTrack.controllers;
 
 import com.StayonTrack.StayonTrack.Repository.UserRepository;
 import com.StayonTrack.StayonTrack.models.User;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -22,7 +23,7 @@ public class UsersController {
     }
 
     @GetMapping("/register")
-    public String showSignupForm(Model model){
+    public String showRegisterForm(Model model){
         model.addAttribute("user", new User());
         return "register";
     }
@@ -34,4 +35,12 @@ public class UsersController {
         userDao.save(user);
         return "redirect:/login";
     }
+
+    @GetMapping("/profile")
+    public String showProfile() {
+        return "profile";
+    }
+
+
+
 }
