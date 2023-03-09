@@ -12,13 +12,13 @@ public class Tasks {
     private long id;
 
 
-    @Column
+    @Column (nullable = false, length = 100)
 private String title;
 
-    @Column
+    @Column (nullable = false, length = 100)
     private String status;
 
-    @Column
+    @Column (nullable = false)
     private String content;
 
 
@@ -69,4 +69,27 @@ private String title;
     }
 
 
+    @ManyToOne
+    @JoinColumn (name= "user_id")
+    private User user;
+
+    public void setUser(User user) {
+        this.user = user;
+    }
+
+    public User getUser() {
+        return user;
+    }
+
+@ManyToOne
+@JoinColumn(name="categories_id")
+    private Categories categories;
+
+    public void setCategories(Categories  categories) {
+        this. categories =  categories;
+    }
+
+    public Categories getCategories() {
+        return  categories;
+    }
 }
