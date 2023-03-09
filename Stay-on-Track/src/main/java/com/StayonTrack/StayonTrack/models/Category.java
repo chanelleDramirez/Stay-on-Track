@@ -3,9 +3,11 @@ package com.StayonTrack.StayonTrack.models;
 
 import jakarta.persistence.*;
 
+import java.util.List;
+
 @Entity
 @Table(name="categories")
-public class Categories {
+public class Category {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -15,12 +17,12 @@ public class Categories {
     private String name;
 
 
-    public Categories(){
+    public Category(){
 
     }
 
 
-    public Categories(Categories copy){
+    public Category(Category copy){
         id = copy.id;
         name = copy.name;
 
@@ -42,5 +44,8 @@ public class Categories {
         this.name = name;
     }
 
+
+    @ManyToMany(mappedBy = "categories")
+    private List<Task> tasks;
 
 }

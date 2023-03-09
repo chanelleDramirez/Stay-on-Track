@@ -3,9 +3,11 @@ package com.StayonTrack.StayonTrack.models;
 
 import jakarta.persistence.*;
 
+import java.util.List;
+
 @Entity
 @Table(name="tasks")
-public class Tasks {
+public class Task {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -22,18 +24,11 @@ private String title;
     private String content;
 
 
-    public Tasks(){
+    public Task(){
 
     }
 
 
-    public Tasks(Tasks copy){
-        id = copy.id;
-        title = copy.title ;
-        status = copy.status;
-        content = copy.content;
-
-    }
 
     public long getId() {
         return id;
@@ -81,15 +76,23 @@ private String title;
         return user;
     }
 
-@ManyToOne
-@JoinColumn(name="categories_id")
-    private Categories categories;
+    @ManyToMany(cascade = CascadeType.ALL)
+    @JoinTable(
+            name="task_category",
+            joinColumns={@JoinColumn(name="task_id")},
+            inverseJoinColumns={@JoinColumn(name="category_id")}
+    )
+    private List<Category> categories;
 
-    public void setCategories(Categories  categories) {
-        this. categories =  categories;
+    public void setId(long id) {
+        this.id = id;
     }
 
-    public Categories getCategories() {
-        return  categories;
+    public List<Category> getCategories() {
+        return categories;
+    }
+
+    public void setCategories(List<Category> categories) {
+        this.categories = categories;
     }
 }

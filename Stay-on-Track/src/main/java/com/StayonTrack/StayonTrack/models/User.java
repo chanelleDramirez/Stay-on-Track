@@ -3,6 +3,8 @@ package com.StayonTrack.StayonTrack.models;
 
 import jakarta.persistence.*;
 
+import java.util.List;
+
 
 @Entity
 @Table(name="users")
@@ -15,7 +17,7 @@ public class User {
     private String email;
     @Column (nullable = false, length = 100)
     private String username;
-    @Column (nullable = false, length = 100)
+    @Column (nullable = false)
     private String password;
 
     @Column (nullable = false, length = 100)
@@ -90,4 +92,7 @@ public class User {
     }
 
 
+
+    @OneToMany(cascade = CascadeType.ALL, mappedBy = "users")
+    private List<Task> tasks;
 }
