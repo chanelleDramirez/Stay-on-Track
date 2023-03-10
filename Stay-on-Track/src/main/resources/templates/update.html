@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+<head>
+    <meta charset="UTF-8">
+    <title>Update</title>
+</head>
+<body>
+<h1>Update a Task</h1>
+
+<nav>
+    <ul>
+        <!-- More links here... -->
+        <li>
+            <form th:action="@{/update}" th:method="post">
+                <button class="btn-link btn" style="margin-top: 8px">update task </button>
+            </form>
+        </li>
+    </ul>
+</nav>
+</body>
+</html>

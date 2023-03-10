@@ -21,10 +21,7 @@ public class AuthenticationController {
 
     }
 
-//    @PostMapping("logout")
-//    public String exitProfile(){
-//        return "redirect:/login";
-//    }
+
 
 
 

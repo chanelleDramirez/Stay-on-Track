@@ -41,6 +41,14 @@ public class UsersController {
         return "profile";
     }
 
+@GetMapping("/create")
+    public String createTask(){
+        return"create";
+}
 
+@GetMapping("/update")
+    public String updateTask(){
+        return "update";
+}
 
 }

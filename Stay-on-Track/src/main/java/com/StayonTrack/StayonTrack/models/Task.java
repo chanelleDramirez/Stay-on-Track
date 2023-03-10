@@ -34,7 +34,7 @@ private String title;
         return id;
     }
 
-    public void setId(Long id) {
+    public void setId(long id) {
         this.id = id;
     }
 
@@ -84,9 +84,7 @@ private String title;
     )
     private List<Category> categories;
 
-    public void setId(long id) {
-        this.id = id;
-    }
+
 
     public List<Category> getCategories() {
         return categories;

@@ -10,15 +10,15 @@
 <div sec:authorize="isAuthenticated()">
     Welcome to Stay on Track!
 
-<!--     <span th:text="${#authentication.principal.id}"/>-->
-<!--    <span th:text="${#authentication.principal.username}"/>-->
-<!--     <span th:text="${#authentication.principal.email}"/>-->
+     <span th:text="${#authentication.principal.id}"/>
+    <span th:text="${#authentication.principal.username}"/>
+     <span th:text="${#authentication.principal.email}"/>
 
 
 
-    User ID: <span th:text="${#authentication.principal.id}"/>
-    Username: <span th:text="${#authentication.principal.username}"/>
-    Email: <span th:text="${#authentication.principal.email}"/>
+<!--    User ID: <span th:text="${#authentication.principal.id}"/>-->
+<!--    Username: <span th:text="${#authentication.principal.username}"/>-->
+<!--    Email: <span th:text="${#authentication.principal.email}"/>-->
 </div>
 <nav>
     <ul>
@@ -26,6 +26,27 @@
         <li>
             <form th:action="@{/logout}" th:method="post">
                 <button class="btn-link btn" style="margin-top: 8px">Logout</button>
+            </form>
+        </li>
+    </ul>
+</nav>
+
+<nav>
+    <ul>
+        <!-- More links here... -->
+        <li>
+            <form th:action="@{/create}" th:method="post">
+                <button class="btn-link btn" style="margin-top: 8px">create new task </button>
+            </form>
+        </li>
+    </ul>
+</nav>
+<nav>
+    <ul>
+        <!-- More links here... -->
+        <li>
+            <form th:action="@{/update}" th:method="post">
+                <button class="btn-link btn" style="margin-top: 8px">update task </button>
             </form>
         </li>
     </ul>

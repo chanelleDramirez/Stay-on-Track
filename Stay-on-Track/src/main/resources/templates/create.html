@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+<head>
+    <meta charset="UTF-8">
+    <title>Create</title>
+</head>
+<body>
+<h1>Create a Task</h1>
+
+<!--<form th:action="@{/create}" method="POST">-->
+<!--    <label for="title">Title</label>-->
+<!--    <input id="title" name="title" type="text" th:field="*{title}"/>-->
+<!--    <label for="description">Description</label>-->
+<!--    <textarea name="description" id="description" th:field="*{description}"></textarea>-->
+<!--    <input type="submit" value="Create"/>-->
+<!--</form>-->
+<nav>
+    <ul>
+        <!-- More links here... -->
+        <li>
+            <form th:action="@{/create}" th:method="post">
+                <button class="btn-link btn" style="margin-top: 8px">submit new task </button>
+            </form>
+        </li>
+    </ul>
+</nav>
+
+
+
+</body>
+</html>
