@@ -1,32 +1,45 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.thymeleaf.org"
-      xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
 <head>
     <meta charset="UTF-8">
     <title>Create</title>
 </head>
 <body>
 <h1>Create a Task</h1>
-
-<!--<form th:action="@{/create}" method="POST">-->
-<!--    <label for="title">Title</label>-->
-<!--    <input id="title" name="title" type="text" th:field="*{title}"/>-->
-<!--    <label for="description">Description</label>-->
+<!--<form th:action="@{/create}" method="POST" th:object="${task}">-->
+<!--    <label for="category">Task Category</label>-->
+<!--    <input type="text" name="category" id="category" th:field="*{title}"/>-->
+<!--    <label for="description">Task Description</label>-->
 <!--    <textarea name="description" id="description" th:field="*{description}"></textarea>-->
 <!--    <input type="submit" value="Create"/>-->
 <!--</form>-->
-<nav>
-    <ul>
-        <!-- More links here... -->
-        <li>
-            <form th:action="@{/create}" th:method="post">
-                <button class="btn-link btn" style="margin-top: 8px">submit new task </button>
-            </form>
-        </li>
-    </ul>
-</nav>
+<!--<nav>-->
+<!--    <ul>-->
+<!--        &lt;!&ndash; More links here... &ndash;&gt;-->
+<!--        <li>-->
+<!--            <form th:action="@{/create}" th:method="post">-->
+<!--                    <button class="btn-link btn" style="margin-top: 8px">submit new task </button>-->
+<!--                            </form>-->
+<!--                        </li>-->
+<!--                    </ul>-->
+<!--                </nav>-->
 
+<form th:action="@{/create}" method="POST">
+    <label for="category">Category</label>
+    <input id="category" th:field="*{category}" />
 
+    <label for="work">Work</label>
+    <input id="work" th:field="*{work}" />
+
+    <label for="chores">Chores"</label>
+    <input id="chores" th:field="*{chores}" />
+
+    <label for="academic">Academic</label>
+    <input id="academic" th:field="*{academic}" />
+
+    <label for="finance">Finance</label>
+    <input id="finance"  th:field="*{finance}" />
+</form>
 
 </body>
 </html>
